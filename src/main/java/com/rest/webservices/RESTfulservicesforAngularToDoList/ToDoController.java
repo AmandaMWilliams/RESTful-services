@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ToDoController {
 
@@ -19,9 +19,9 @@ public class ToDoController {
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")
-    public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id){
+    public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
         Todo todo = todoService.deleteById(id);
-        if(todo != null){
+        if (todo != null) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
