@@ -1,4 +1,4 @@
-package com.rest.webservices.RESTfulservicesforAngularToDoList;
+package com.rest.webservices.RESTfulservicesforAngularToDoList.helloWorld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

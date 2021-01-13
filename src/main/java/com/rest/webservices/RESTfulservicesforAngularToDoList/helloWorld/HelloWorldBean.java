@@ -1,4 +1,4 @@
-package com.rest.webservices.RESTfulservicesforAngularToDoList;
+package com.rest.webservices.RESTfulservicesforAngularToDoList.helloWorld;
 
 public class HelloWorldBean {
 
