@@ -1,6 +1,7 @@
 package com.rest.webservices.RESTfulservicesforAngularToDoList;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Todo {
     private Long id;
@@ -58,4 +59,21 @@ public class Todo {
 
     private Boolean isDone;
 
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+        if(obj == null) return false;
+        if(getClass() != obj.getClass()) return false;
+        Todo other = (Todo) obj;
+        if(id != other.id) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int) (id ^ (id >>> 32));
+        return result;
+    }
 }
