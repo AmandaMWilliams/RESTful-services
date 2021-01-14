@@ -1,6 +1,5 @@
 package com.rest.webservices.RESTfulservicesforAngularToDoList;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
