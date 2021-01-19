@@ -35,6 +35,7 @@ public class ToDoController {
         return ResponseEntity.notFound().build();
     }
 
+    //edit/update a Todo
     @PutMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Todo> updateTodo(
             @PathVariable String username, @PathVariable long id, @RequestBody Todo todo){
@@ -42,6 +43,7 @@ public class ToDoController {
         return new ResponseEntity<Todo>(todo, HttpStatus.OK);
     }
 
+    //create a new Todo
     @PostMapping("/users/{username}/todos")
     public ResponseEntity<Void> updateTodo(
             @PathVariable String username, @RequestBody Todo todo){

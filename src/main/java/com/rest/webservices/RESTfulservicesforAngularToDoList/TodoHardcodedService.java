@@ -32,7 +32,7 @@ public class TodoHardcodedService {
     }
 
     public Todo save(Todo todo) {
-        if (todo.getId() == -1 || todo.getId()==0) {
+        if(todo.getId() == -1 || todo.getId() == 0) {
             todo.setId((long) ++idCounter);
             todos.add(todo);
         } else {
