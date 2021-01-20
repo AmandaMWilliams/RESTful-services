@@ -5,7 +5,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -15,9 +14,9 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable() //disable csrf in favor of JWT
                 .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll() //allow unauthenticated requests to Options
                 .anyRequest().authenticated()
                 .and()
-        .httpBasic();
+                .httpBasic();
     }
 }
