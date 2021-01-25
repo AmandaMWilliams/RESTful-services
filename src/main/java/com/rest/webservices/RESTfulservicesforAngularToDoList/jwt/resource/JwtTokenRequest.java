@@ -1,4 +1,6 @@
-package com.rest.webservices.RESTfulservicesforAngularToDoList.jwt;
+package com.rest.webservices.RESTfulservicesforAngularToDoList.jwt.resource;
+
+import java.io.Serializable;
 
 public class  JwtTokenRequest implements Serializable {
 

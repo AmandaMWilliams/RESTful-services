@@ -1,5 +1,18 @@
 package com.rest.webservices.RESTfulservicesforAngularToDoList.jwt;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Clock;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
 
 @Component
 public class JwtTokenUtil implements Serializable {
@@ -7,7 +20,12 @@ public class JwtTokenUtil implements Serializable {
     static final String CLAIM_KEY_USERNAME = "sub";
     static final String CLAIM_KEY_CREATED = "iat";
     private static final long serialVersionUID = -3301605591108950415L;
-    private Clock clock = DefaultClock.INSTANCE;
+    private Clock clock = new Clock() {  //Clock clock = DefaultClock.INSTANCE;
+        @Override
+        public Date now() {
+            return null;
+        }
+    };
 
     @Value("${jwt.signing.key.secret}")
     private String secret;
