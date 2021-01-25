@@ -1,4 +1,4 @@
-package com.rest.webservices.RESTfulservicesforAngularToDoList.basic.auth;
+package com.rest.basic.auth;
 
 public class AuthenticationBean {
 
